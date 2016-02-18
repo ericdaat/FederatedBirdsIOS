@@ -15,9 +15,12 @@
 
 @interface CommonTableViewController : UITableViewController
 
-@property NSArray *tweets;
+@property NSMutableArray *tweets;
 
 - (void)reloadTweetsForDisplay;
+- (void) loadImageForUserName:(NSString *)username
+        withCompletionHandler: (FBSessionCompletionHandlerWithDictionary) completionHandler;
+
 @end
 
 

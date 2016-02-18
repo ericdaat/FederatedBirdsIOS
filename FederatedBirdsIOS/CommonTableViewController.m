@@ -42,7 +42,7 @@
 
 
 - (void)reloadTweetsForDisplay {
-    self.tweets = nil;
+    //redefined in the subclasses
 }
 
 
@@ -65,33 +65,36 @@
     return [self.tweets count];
 }
 
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void) loadImageForUserName:(NSString *)username
+        withCompletionHandler: (FBSessionCompletionHandlerWithDictionary) completionHandler{
     
-
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"stdcell" forIndexPath:indexPath];
-    
-    NSString *tweet = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"content"];
-    NSString *user = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"by"];
-    
-    NSString *imagePath = [robohash stringByAppendingString:user];
+    NSString *imagePath = [robohash stringByAppendingString:username];
     
     NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:imagePath]
                                                                  completionHandler:^(NSData * _Nullable data,
                                                                                      NSURLResponse * _Nullable response,
                                                                                      NSError * _Nullable error) {
                                                                      if (error){
-                                                                         
+                                                                         completionHandler(nil,error);
                                                                      } else {
-                                                                         cell.imageView.image = [UIImage imageWithData:data];
+                                                                         NSDictionary *dict = @{@"image": [UIImage imageWithData:data]};
+                                                                         completionHandler(dict,nil);
                                                                      }
                                                                  }];
     
     [dataTask resume];
-    cell.textLabel.text = tweet;
-    cell.detailTextLabel.text = user;
+
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"stdcell" forIndexPath:indexPath];
     
+    cell.textLabel.text = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"content"];
+    cell.detailTextLabel.text = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"by"];
+    cell.imageView.image = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"image"];
     
     return cell;
 }

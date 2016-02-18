@@ -31,9 +31,22 @@
 - (void) reloadTweetsForDisplay {
     
     [[FBDataProvider sharedInstance].session readingListWithCompletionHandler:^(NSArray *result, NSError *error) {
-        self.tweets = result;
+        
+        self.tweets = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary *tweet in result){
+            NSMutableDictionary *mutableTweet = [tweet mutableCopy];
+            
+            [self loadImageForUserName:[tweet objectForKey:@"by"]
+                 withCompletionHandler:^(NSDictionary *result, NSError *error) {
+                     [mutableTweet addEntriesFromDictionary:result];
+                     [self.tweets addObject:mutableTweet];
+            }];
+        }
+        
         [self.tableView reloadData];
     }];
+    
     
 }
 
