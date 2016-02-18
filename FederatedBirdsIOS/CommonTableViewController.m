@@ -17,6 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    
+    [self.refreshControl addTarget:self
+                            action:@selector(reloadTweetsForDisplay)
+                  forControlEvents:UIControlEventValueChanged];
+    
 }
 
 
@@ -92,7 +99,13 @@
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"stdcell" forIndexPath:indexPath];
     
-    cell.textLabel.text = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"content"];
+    NSString *tweet = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"content"];
+    
+    if (![tweet isEqual:[NSNull null]]){
+        cell.textLabel.text = tweet;
+    } else {
+        cell.textLabel.text = @"";
+    }
     cell.detailTextLabel.text = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"by"];
     
     return cell;
@@ -136,13 +149,24 @@
 
 #pragma mark - Navigation
 
-/*
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 //     Get the new view controller using [segue destinationViewController].
 //     Pass the selected object to the new view controller.
+    
+    
+    if ([[segue identifier] isEqualToString:@"tweetCell"]) {
+        
+        UserDetailViewController *vc = [segue destinationViewController];
+        NSInteger *row = [self.tableView indexPathForCell:sender].row;
+        vc.username = [[self.tweets objectAtIndex:row] objectForKey:@"by"];
+    }
+    
+    
+    
+    
 }
-*/
+
 
 
 @end

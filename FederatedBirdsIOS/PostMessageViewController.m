@@ -11,16 +11,14 @@
 @interface PostMessageViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *messageTextView;
 
+@property id keyboardWillShowObserver;
+@property id keyboardWillHideObserver;
+@property UIEdgeInsets defaultContentInset;
+@property BOOL defaultContentInsetStored;
+
 @end
 
 @implementation PostMessageViewController
-
-- (void) viewWillAppear:(BOOL)animated{
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                target:self
-                                                                                action:@selector(postMessage)];
-}
 
 - (void)postMessage {
     [[FBDataProvider sharedInstance].session postPublicMessage:self.messageTextView.text
@@ -29,6 +27,15 @@
                                                  [[self navigationController ] popToRootViewControllerAnimated:YES];
                                              });
                                          }];
+}
+
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                           target:self
+                                                                                           action:@selector(postMessage)];
 }
 
 @end

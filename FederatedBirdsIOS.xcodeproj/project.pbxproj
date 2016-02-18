@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070396181C761DBF008E21DC /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070396171C761DBF008E21DC /* UserDetailViewController.m */; };
 		072B4D7B1C74868D00292B3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B4D7A1C74868D00292B3E /* main.m */; };
 		072B4D7E1C74868D00292B3E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B4D7D1C74868D00292B3E /* AppDelegate.m */; };
 		072B4D871C74868D00292B3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072B4D851C74868D00292B3E /* Main.storyboard */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		070396161C761DBF008E21DC /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDetailViewController.h; path = FederatedBirdsIOS/UserDetailViewController.h; sourceTree = "<group>"; };
+		070396171C761DBF008E21DC /* UserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDetailViewController.m; path = FederatedBirdsIOS/UserDetailViewController.m; sourceTree = "<group>"; };
 		072B4D761C74868D00292B3E /* FederatedBirdsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FederatedBirdsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		072B4D7A1C74868D00292B3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		072B4D7C1C74868D00292B3E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 				072B4D9A1C74A8B100292B3E /* AllTweetsTableViewController.m */,
 				07A575711C751962006A4074 /* PostMessageViewController.h */,
 				07A575721C751962006A4074 /* PostMessageViewController.m */,
+				070396161C761DBF008E21DC /* UserDetailViewController.h */,
+				070396171C761DBF008E21DC /* UserDetailViewController.m */,
 			);
 			name = Controller;
 			path = ..;
@@ -199,6 +204,7 @@
 				072B4D951C748A1200292B3E /* CommonTableViewController.m in Sources */,
 				072B4D981C74A81900292B3E /* ReadingListTableViewController.m in Sources */,
 				072B4D9B1C74A8B100292B3E /* AllTweetsTableViewController.m in Sources */,
+				070396181C761DBF008E21DC /* UserDetailViewController.m in Sources */,
 				07A575701C74E1F0006A4074 /* FBDataProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

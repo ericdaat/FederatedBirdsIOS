@@ -57,6 +57,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="XQZ-j3-Gil" kind="show" identifier="tweetCell" id="ZKB-Xn-Rov"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -75,6 +78,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krh-wS-7TX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1502" y="-287"/>
+        </scene>
+        <!--User Detail View Controller-->
+        <scene sceneID="ldU-08-mhq">
+            <objects>
+                <viewController id="XQZ-j3-Gil" customClass="UserDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0cW-bu-N9f"/>
+                        <viewControllerLayoutGuide type="bottom" id="bF7-gL-brz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cCe-Vm-Ga8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XL-Gc-Xqq">
+                                <rect key="frame" x="20" y="72" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6XL-Gc-Xqq" firstAttribute="leading" secondItem="cCe-Vm-Ga8" secondAttribute="leadingMargin" id="5Rz-tN-VpT"/>
+                            <constraint firstItem="6XL-Gc-Xqq" firstAttribute="top" secondItem="0cW-bu-N9f" secondAttribute="bottom" constant="8" id="Khx-xH-f4e"/>
+                            <constraint firstItem="6XL-Gc-Xqq" firstAttribute="trailing" secondItem="cCe-Vm-Ga8" secondAttribute="trailingMargin" id="j6T-em-yvg"/>
+                            <constraint firstItem="bF7-gL-brz" firstAttribute="top" secondItem="6XL-Gc-Xqq" secondAttribute="bottom" constant="458" id="zUd-16-Ws9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="usernameLabel" destination="6XL-Gc-Xqq" id="ocC-yd-vkC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6nh-mP-Y7w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2394" y="-287"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -146,6 +184,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="XQZ-j3-Gil" kind="show" id="NE6-lw-ApG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -189,10 +230,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="sOM-Mb-g4P" firstAttribute="top" secondItem="4GJ-NJ-iLS" secondAttribute="topMargin" id="02q-OA-AbY"/>
-                            <constraint firstItem="sOM-Mb-g4P" firstAttribute="leading" secondItem="4GJ-NJ-iLS" secondAttribute="leadingMargin" id="3oa-m6-Nmf"/>
-                            <constraint firstItem="sOM-Mb-g4P" firstAttribute="bottom" secondItem="4GJ-NJ-iLS" secondAttribute="bottomMargin" id="Izp-zN-ZSs"/>
-                            <constraint firstItem="sOM-Mb-g4P" firstAttribute="trailing" secondItem="4GJ-NJ-iLS" secondAttribute="trailingMargin" id="gcD-uH-Qy3"/>
+                            <constraint firstItem="sOM-Mb-g4P" firstAttribute="leading" secondItem="4GJ-NJ-iLS" secondAttribute="leadingMargin" id="8gM-wT-6dc"/>
+                            <constraint firstItem="sOM-Mb-g4P" firstAttribute="trailing" secondItem="4GJ-NJ-iLS" secondAttribute="trailingMargin" id="C3z-tb-AoM"/>
+                            <constraint firstItem="sOM-Mb-g4P" firstAttribute="bottom" secondItem="4GJ-NJ-iLS" secondAttribute="bottomMargin" id="bAK-Mx-i0d"/>
+                            <constraint firstItem="sOM-Mb-g4P" firstAttribute="top" secondItem="4GJ-NJ-iLS" secondAttribute="topMargin" id="e1D-PN-yn2"/>
                         </constraints>
                     </view>
                     <connections>
@@ -201,10 +242,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fsp-2o-fCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2267" y="92"/>
+            <point key="canvasLocation" x="2627" y="564"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="ZKB-Xn-Rov"/>
         <segue reference="A4w-sK-hJ1"/>
     </inferredMetricsTieBreakers>
 </document>
