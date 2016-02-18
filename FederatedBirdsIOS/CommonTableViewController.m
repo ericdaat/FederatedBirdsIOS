@@ -65,22 +65,38 @@
     return [self.tweets count];
 }
 
+- (void) loadImageForUserName:(NSString *)username
+        withCompletionHandler: (FBSessionCompletionHandlerWithDictionary) completionHandler{
+    
+    NSString *imagePath = [robohash stringByAppendingString:username];
+    
+    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:imagePath]
+                                                                 completionHandler:^(NSData * _Nullable data,
+                                                                                     NSURLResponse * _Nullable response,
+                                                                                     NSError * _Nullable error) {
+                                                                     if (error){
+                                                                         completionHandler(nil,error);
+                                                                     } else {
+                                                                         NSDictionary *dict = @{@"image": [UIImage imageWithData:data]};
+                                                                         completionHandler(dict,nil);
+                                                                     }
+                                                                 }];
+    
+    [dataTask resume];
+    
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"stdcell" forIndexPath:indexPath];
     
-    NSString *tweet = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"content"];
-    NSString *user = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"by"];
-    
-    cell.textLabel.text = tweet;
-    cell.detailTextLabel.text = user;
+    cell.textLabel.text = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"content"];
+    cell.detailTextLabel.text = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"by"];
     
     return cell;
 }
-
-
 
 
 /*
@@ -117,14 +133,16 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
+/*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//     Get the new view controller using [segue destinationViewController].
+//     Pass the selected object to the new view controller.
 }
 */
+
 
 @end

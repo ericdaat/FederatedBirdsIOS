@@ -15,63 +15,20 @@
 
 @implementation PostMessageViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (void) viewWillAppear:(BOOL)animated{
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                target:self
+                                                                                action:@selector(postMessage)];
 }
 
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(handleKeyboardDidShow:)
-                                                 name:UIKeyboardDidShowNotification object:nil];
-    
-    
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(handleKeyboardWillHide:)
-     name:UIKeyboardWillHideNotification object:nil];
+- (void)postMessage {
+    [[FBDataProvider sharedInstance].session postPublicMessage:self.messageTextView.text
+                                         withCompletionHandler:^(NSError *error) {
+                                             dispatch_async(dispatch_get_main_queue(), ^{
+                                                 [[self navigationController ] popToRootViewControllerAnimated:YES];
+                                             });
+                                         }];
 }
-
-- (void) handleKeyboardDidShow:(NSNotification *)paramNotification{
-    
-    NSValue *keyboardRectAsObject =
-    [[paramNotification userInfo]
-     objectForKey:UIKeyboardFrameEndUserInfoKey];
-    
-    
-    CGRect keyboardRect = CGRectZero;
-    [keyboardRectAsObject getValue:&keyboardRect];
-    
-    
-    self.messageTextView.contentInset =
-    UIEdgeInsetsMake(0.0f,
-                     0.0f,
-                     keyboardRect.size.height,
-                     0.0f);
-}
-
-- (void) handleKeyboardWillHide:(NSNotification *)paramNotification{
-    
-    self.messageTextView.contentInset = UIEdgeInsetsZero;
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
