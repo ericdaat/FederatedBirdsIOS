@@ -10,14 +10,16 @@
 
 @interface UserDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-
+@property (weak, nonatomic) IBOutlet UIImageView *avatarView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation UserDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    self.avatarView.image = self.avatar;
     self.usernameLabel.text = self.username;
 }
 

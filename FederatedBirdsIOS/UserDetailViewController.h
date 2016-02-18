@@ -10,4 +10,8 @@
 
 @interface UserDetailViewController : UIViewController
 @property NSString *username;
+@property UIImage *avatar;
+@property NSArray *tweets;
+
+
 @end

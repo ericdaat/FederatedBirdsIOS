@@ -155,11 +155,34 @@
 //     Pass the selected object to the new view controller.
     
     
-    if ([[segue identifier] isEqualToString:@"tweetCell"]) {
-        
+    if ([[segue identifier] isEqualToString:@"clickOnTweetSegue"]) {
         UserDetailViewController *vc = [segue destinationViewController];
         NSInteger *row = [self.tableView indexPathForCell:sender].row;
-        vc.username = [[self.tweets objectAtIndex:row] objectForKey:@"by"];
+        
+        NSString *username = [[self.tweets objectAtIndex:row] objectForKey:@"by"];
+        
+        vc.username = username;
+        
+        NSString *handle = [username stringByAppendingString:serverURL];
+        
+        
+        [FBSession publicMessagesForHandle:handle withCompletionHandler:^(NSArray *result, NSError *error) {
+            vc.tweets = result;
+        }];
+        
+        NSString *imagePath = [robohash stringByAppendingString:username];
+        
+        NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:imagePath]
+                                                                     completionHandler:^(NSData * _Nullable data,
+                                                                                         NSURLResponse * _Nullable response,
+                                                                                         NSError * _Nullable error) {
+                                                                         
+                                                                         vc.avatar = [UIImage imageWithData:data];
+                                                                         
+                                                                     }];
+        
+        [dataTask resume];
+        
     }
     
     

@@ -58,7 +58,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="XQZ-j3-Gil" kind="show" identifier="tweetCell" id="ZKB-Xn-Rov"/>
+                                    <segue destination="XQZ-j3-Gil" kind="show" identifier="clickOnTweetSegue" id="ZKB-Xn-Rov"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -91,22 +91,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XL-Gc-Xqq">
-                                <rect key="frame" x="20" y="72" width="560" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XL-Gc-Xqq">
+                                <rect key="frame" x="0.0" y="225" width="600" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P6V-Jx-yzu">
+                                <rect key="frame" x="0.0" y="254" width="600" height="297"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hne-mw-XBS">
+                                <rect key="frame" x="228" y="72" width="145" height="145"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6XL-Gc-Xqq" firstAttribute="leading" secondItem="cCe-Vm-Ga8" secondAttribute="leadingMargin" id="5Rz-tN-VpT"/>
-                            <constraint firstItem="6XL-Gc-Xqq" firstAttribute="top" secondItem="0cW-bu-N9f" secondAttribute="bottom" constant="8" id="Khx-xH-f4e"/>
-                            <constraint firstItem="6XL-Gc-Xqq" firstAttribute="trailing" secondItem="cCe-Vm-Ga8" secondAttribute="trailingMargin" id="j6T-em-yvg"/>
-                            <constraint firstItem="bF7-gL-brz" firstAttribute="top" secondItem="6XL-Gc-Xqq" secondAttribute="bottom" constant="458" id="zUd-16-Ws9"/>
+                            <constraint firstItem="bF7-gL-brz" firstAttribute="top" secondItem="P6V-Jx-yzu" secondAttribute="bottom" id="FQs-DE-z9t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6XL-Gc-Xqq" secondAttribute="trailing" constant="-20" id="GQO-hP-vOw"/>
+                            <constraint firstItem="P6V-Jx-yzu" firstAttribute="leading" secondItem="cCe-Vm-Ga8" secondAttribute="leadingMargin" constant="-20" id="T8Q-JQ-VOl"/>
+                            <constraint firstItem="Hne-mw-XBS" firstAttribute="top" secondItem="0cW-bu-N9f" secondAttribute="bottom" constant="8" id="UHP-xY-Meb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P6V-Jx-yzu" secondAttribute="trailing" constant="-20" id="dzR-gx-bR6"/>
+                            <constraint firstItem="P6V-Jx-yzu" firstAttribute="top" secondItem="6XL-Gc-Xqq" secondAttribute="bottom" constant="8" id="jBr-Gv-cXY"/>
+                            <constraint firstItem="P6V-Jx-yzu" firstAttribute="top" secondItem="6XL-Gc-Xqq" secondAttribute="bottom" constant="8" id="nec-FP-KwU"/>
+                            <constraint firstItem="6XL-Gc-Xqq" firstAttribute="leading" secondItem="cCe-Vm-Ga8" secondAttribute="leadingMargin" constant="-20" id="phj-UX-ypS"/>
+                            <constraint firstItem="6XL-Gc-Xqq" firstAttribute="top" secondItem="Hne-mw-XBS" secondAttribute="bottom" constant="8" id="xCZ-Lx-523"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="avatar" destination="Hne-mw-XBS" id="7WM-1g-YV0"/>
+                        <outlet property="tableView" destination="P6V-Jx-yzu" id="KbM-Cg-E1s"/>
                         <outlet property="usernameLabel" destination="6XL-Gc-Xqq" id="ocC-yd-vkC"/>
                     </connections>
                 </viewController>
@@ -185,7 +199,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="XQZ-j3-Gil" kind="show" id="NE6-lw-ApG"/>
+                                    <segue destination="XQZ-j3-Gil" kind="show" identifier="clickOnTweetSegue" id="NE6-lw-ApG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -222,7 +236,7 @@
                                 <rect key="frame" x="20" y="0.0" width="560" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
-                                    <mutableString key="label">eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</mutableString>
+                                    <string key="label">eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</string>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -246,7 +260,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZKB-Xn-Rov"/>
+        <segue reference="NE6-lw-ApG"/>
         <segue reference="A4w-sK-hJ1"/>
     </inferredMetricsTieBreakers>
 </document>
