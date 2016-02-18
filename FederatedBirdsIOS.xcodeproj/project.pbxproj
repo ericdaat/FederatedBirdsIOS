@@ -1,0 +1,354 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		072B4D7B1C74868D00292B3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B4D7A1C74868D00292B3E /* main.m */; };
+		072B4D7E1C74868D00292B3E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B4D7D1C74868D00292B3E /* AppDelegate.m */; };
+		072B4D871C74868D00292B3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072B4D851C74868D00292B3E /* Main.storyboard */; };
+		072B4D891C74868D00292B3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072B4D881C74868D00292B3E /* Assets.xcassets */; };
+		072B4D8C1C74868D00292B3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072B4D8A1C74868D00292B3E /* LaunchScreen.storyboard */; };
+		072B4D951C748A1200292B3E /* CommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B4D941C748A1200292B3E /* CommonTableViewController.m */; };
+		072B4D981C74A81900292B3E /* ReadingListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B4D971C74A81900292B3E /* ReadingListTableViewController.m */; };
+		072B4D9B1C74A8B100292B3E /* AllTweetsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B4D9A1C74A8B100292B3E /* AllTweetsTableViewController.m */; };
+		072B4DA01C74B0C500292B3E /* FBSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B4D9F1C74B0C500292B3E /* FBSession.m */; };
+		07A575701C74E1F0006A4074 /* FBDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A5756F1C74E1F0006A4074 /* FBDataProvider.m */; };
+		07A575731C751962006A4074 /* PostMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A575721C751962006A4074 /* PostMessageViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		072B4D761C74868D00292B3E /* FederatedBirdsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FederatedBirdsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		072B4D7A1C74868D00292B3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		072B4D7C1C74868D00292B3E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		072B4D7D1C74868D00292B3E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		072B4D861C74868D00292B3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		072B4D881C74868D00292B3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		072B4D8B1C74868D00292B3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		072B4D8D1C74868D00292B3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		072B4D931C748A1200292B3E /* CommonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonTableViewController.h; path = FederatedBirdsIOS/CommonTableViewController.h; sourceTree = "<group>"; };
+		072B4D941C748A1200292B3E /* CommonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonTableViewController.m; path = FederatedBirdsIOS/CommonTableViewController.m; sourceTree = "<group>"; };
+		072B4D961C74A81900292B3E /* ReadingListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReadingListTableViewController.h; path = FederatedBirdsIOS/ReadingListTableViewController.h; sourceTree = "<group>"; };
+		072B4D971C74A81900292B3E /* ReadingListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReadingListTableViewController.m; path = FederatedBirdsIOS/ReadingListTableViewController.m; sourceTree = "<group>"; };
+		072B4D991C74A8B100292B3E /* AllTweetsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AllTweetsTableViewController.h; path = FederatedBirdsIOS/AllTweetsTableViewController.h; sourceTree = "<group>"; };
+		072B4D9A1C74A8B100292B3E /* AllTweetsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AllTweetsTableViewController.m; path = FederatedBirdsIOS/AllTweetsTableViewController.m; sourceTree = "<group>"; };
+		072B4D9E1C74B0C500292B3E /* FBSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBSession.h; path = FederatedBirdsIOS/FBSession.h; sourceTree = "<group>"; };
+		072B4D9F1C74B0C500292B3E /* FBSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBSession.m; path = FederatedBirdsIOS/FBSession.m; sourceTree = "<group>"; };
+		07A5756E1C74E1F0006A4074 /* FBDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBDataProvider.h; path = FederatedBirdsIOS/FBDataProvider.h; sourceTree = "<group>"; };
+		07A5756F1C74E1F0006A4074 /* FBDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBDataProvider.m; path = FederatedBirdsIOS/FBDataProvider.m; sourceTree = "<group>"; };
+		07A575711C751962006A4074 /* PostMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostMessageViewController.h; path = FederatedBirdsIOS/PostMessageViewController.h; sourceTree = "<group>"; };
+		07A575721C751962006A4074 /* PostMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostMessageViewController.m; path = FederatedBirdsIOS/PostMessageViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		072B4D731C74868D00292B3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		072B4D6D1C74868D00292B3E = {
+			isa = PBXGroup;
+			children = (
+				072B4D781C74868D00292B3E /* FederatedBirdsIOS */,
+				072B4D771C74868D00292B3E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		072B4D771C74868D00292B3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				072B4D761C74868D00292B3E /* FederatedBirdsIOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		072B4D781C74868D00292B3E /* FederatedBirdsIOS */ = {
+			isa = PBXGroup;
+			children = (
+				072B4D7C1C74868D00292B3E /* AppDelegate.h */,
+				072B4D7D1C74868D00292B3E /* AppDelegate.m */,
+				072B4D9D1C74AEE800292B3E /* Model */,
+				072B4D9C1C74AED500292B3E /* Controller */,
+				072B4D851C74868D00292B3E /* Main.storyboard */,
+				072B4D881C74868D00292B3E /* Assets.xcassets */,
+				072B4D8A1C74868D00292B3E /* LaunchScreen.storyboard */,
+				072B4D8D1C74868D00292B3E /* Info.plist */,
+				072B4D791C74868D00292B3E /* Supporting Files */,
+			);
+			path = FederatedBirdsIOS;
+			sourceTree = "<group>";
+		};
+		072B4D791C74868D00292B3E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				072B4D7A1C74868D00292B3E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		072B4D9C1C74AED500292B3E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				072B4D931C748A1200292B3E /* CommonTableViewController.h */,
+				072B4D941C748A1200292B3E /* CommonTableViewController.m */,
+				072B4D961C74A81900292B3E /* ReadingListTableViewController.h */,
+				072B4D971C74A81900292B3E /* ReadingListTableViewController.m */,
+				072B4D991C74A8B100292B3E /* AllTweetsTableViewController.h */,
+				072B4D9A1C74A8B100292B3E /* AllTweetsTableViewController.m */,
+				07A575711C751962006A4074 /* PostMessageViewController.h */,
+				07A575721C751962006A4074 /* PostMessageViewController.m */,
+			);
+			name = Controller;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		072B4D9D1C74AEE800292B3E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				072B4D9E1C74B0C500292B3E /* FBSession.h */,
+				072B4D9F1C74B0C500292B3E /* FBSession.m */,
+				07A5756E1C74E1F0006A4074 /* FBDataProvider.h */,
+				07A5756F1C74E1F0006A4074 /* FBDataProvider.m */,
+			);
+			name = Model;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		072B4D751C74868D00292B3E /* FederatedBirdsIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 072B4D901C74868D00292B3E /* Build configuration list for PBXNativeTarget "FederatedBirdsIOS" */;
+			buildPhases = (
+				072B4D721C74868D00292B3E /* Sources */,
+				072B4D731C74868D00292B3E /* Frameworks */,
+				072B4D741C74868D00292B3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FederatedBirdsIOS;
+			productName = FederatedBirdsIOS;
+			productReference = 072B4D761C74868D00292B3E /* FederatedBirdsIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		072B4D6E1C74868D00292B3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Eric Daoud Attoyan";
+				TargetAttributes = {
+					072B4D751C74868D00292B3E = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 072B4D711C74868D00292B3E /* Build configuration list for PBXProject "FederatedBirdsIOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 072B4D6D1C74868D00292B3E;
+			productRefGroup = 072B4D771C74868D00292B3E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				072B4D751C74868D00292B3E /* FederatedBirdsIOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		072B4D741C74868D00292B3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				072B4D8C1C74868D00292B3E /* LaunchScreen.storyboard in Resources */,
+				072B4D891C74868D00292B3E /* Assets.xcassets in Resources */,
+				072B4D871C74868D00292B3E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		072B4D721C74868D00292B3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07A575731C751962006A4074 /* PostMessageViewController.m in Sources */,
+				072B4D7E1C74868D00292B3E /* AppDelegate.m in Sources */,
+				072B4D7B1C74868D00292B3E /* main.m in Sources */,
+				072B4DA01C74B0C500292B3E /* FBSession.m in Sources */,
+				072B4D951C748A1200292B3E /* CommonTableViewController.m in Sources */,
+				072B4D981C74A81900292B3E /* ReadingListTableViewController.m in Sources */,
+				072B4D9B1C74A8B100292B3E /* AllTweetsTableViewController.m in Sources */,
+				07A575701C74E1F0006A4074 /* FBDataProvider.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		072B4D851C74868D00292B3E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				072B4D861C74868D00292B3E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		072B4D8A1C74868D00292B3E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				072B4D8B1C74868D00292B3E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		072B4D8E1C74868D00292B3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		072B4D8F1C74868D00292B3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		072B4D911C74868D00292B3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FederatedBirdsIOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.daoud.FederatedBirdsIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		072B4D921C74868D00292B3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FederatedBirdsIOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.daoud.FederatedBirdsIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		072B4D711C74868D00292B3E /* Build configuration list for PBXProject "FederatedBirdsIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				072B4D8E1C74868D00292B3E /* Debug */,
+				072B4D8F1C74868D00292B3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		072B4D901C74868D00292B3E /* Build configuration list for PBXNativeTarget "FederatedBirdsIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				072B4D911C74868D00292B3E /* Debug */,
+				072B4D921C74868D00292B3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 072B4D6E1C74868D00292B3E /* Project object */;
+}

@@ -74,24 +74,8 @@
     NSString *tweet = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"content"];
     NSString *user = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"by"];
     
-    NSString *imagePath = [robohash stringByAppendingString:user];
-    
-    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:imagePath]
-                                                                 completionHandler:^(NSData * _Nullable data,
-                                                                                     NSURLResponse * _Nullable response,
-                                                                                     NSError * _Nullable error) {
-                                                                     if (error){
-                                                                         
-                                                                     } else {
-                                                                         cell.imageView.image = [UIImage imageWithData:data];
-                                                                     }
-                                                                 }];
-    
-    [dataTask resume];
     cell.textLabel.text = tweet;
     cell.detailTextLabel.text = user;
-    
-    
     
     return cell;
 }
