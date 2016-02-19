@@ -162,27 +162,7 @@
         NSString *username = [[self.tweets objectAtIndex:row] objectForKey:@"by"];
         
         vc.username = username;
-        
-        NSString *handle = [username stringByAppendingString:serverURL];
-        
-        
-        [FBSession publicMessagesForHandle:handle withCompletionHandler:^(NSArray *result, NSError *error) {
-            vc.tweets = result;
-        }];
-        
-        NSString *imagePath = [robohash stringByAppendingString:username];
-        
-        NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:imagePath]
-                                                                     completionHandler:^(NSData * _Nullable data,
-                                                                                         NSURLResponse * _Nullable response,
-                                                                                         NSError * _Nullable error) {
-                                                                         
-                                                                         vc.avatar = [UIImage imageWithData:data];
-                                                                         
-                                                                     }];
-        
-        [dataTask resume];
-        
+    
     }
     
     

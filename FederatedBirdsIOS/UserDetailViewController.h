@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FBDataProvider.h"
 
-@interface UserDetailViewController : UIViewController
+@interface UserDetailViewController : UIViewController <UITableViewDataSource>
 @property NSString *username;
 @property UIImage *avatar;
 @property NSArray *tweets;

@@ -11,8 +11,6 @@
 #import "FBDataProvider.h"
 #import "UserDetailViewController.h"
 
-#define robohash @"https://robohash.org/"
-#define serverURL @"@sio.lab.corp.abelionni.com"
 
 @interface CommonTableViewController : UITableViewController
 

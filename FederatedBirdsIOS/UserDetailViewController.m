@@ -19,9 +19,49 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.avatarView.image = self.avatar;
+    self.tableView.dataSource = self;
     self.usernameLabel.text = self.username;
+    
+    [self loadData];
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [self.tweets count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"stdcell" forIndexPath:indexPath];
+    
+    NSString *tweet = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"content"];
+    
+    if (![tweet isEqual:[NSNull null]]){
+        cell.textLabel.text = tweet;
+    } else {
+        cell.textLabel.text = @"";
+    }
+    cell.detailTextLabel.text = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"by"];
+    
+    return cell;
+}
+
+- (void) loadData {
+    NSString *handle = [self.username stringByAppendingString:serverURL];
+    
+    [FBSession publicMessagesForHandle:handle withCompletionHandler:^(NSArray *result, NSError *error) {
+        self.tweets = result;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
+}
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

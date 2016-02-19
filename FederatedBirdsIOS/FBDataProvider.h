@@ -10,6 +10,8 @@
 #import "FBSession.h"
 
 #define kFBDataProviderAuthenticated @"kFBDataProviderAuthenticated"
+#define serverURL @"@sio.lab.corp.abelionni.com"
+#define robohash @"https://robohash.org/"
 
 @interface FBDataProvider : NSObject
 
